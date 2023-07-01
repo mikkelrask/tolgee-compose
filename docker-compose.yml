@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    image: tolgee/tolgee
+    container_name: tolgee
+    volumes:
+      - ./data:/data
+      - ./config.yaml:/config.yaml
+    ports:
+      - '25432:25432' # if you would like to access the DB
+      - '8080:8080'
+    restart: unless-stopped
+
